@@ -1,7 +1,7 @@
 " File:         pim.vim
 " Description:  Easy code sharing to Pim
 " Maintainer:   Benjie Gillam <vim@jemjie.com>
-" Version:      0.1.0
+" Version:      0.1.1
 " Language:     Vim script
 " Last Change:  2012 May 22
 
