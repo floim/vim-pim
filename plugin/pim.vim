@@ -1,7 +1,7 @@
 " File:         pim.vim
 " Description:  Easy code sharing to Pim
 " Maintainer:   Benjie Gillam <vim@jemjie.com>
-" Version:      0.1.1
+" Version:      0.1.2
 " Language:     Vim script
 " Last Change:  2012 May 22
 
@@ -12,7 +12,10 @@ function! PimYank() range
   let firstLine = a:firstline
   let lastLine = a:lastline
   let linenumber = firstLine
-  let filename = expand('%:t')
+  let filename = expand('%')
+  if filename[0] is '/'
+    let filename = expand('%:t')
+  endif
   try
     let p_save = @p
     let addNewline = ""
@@ -29,7 +32,9 @@ endfunction
 
 function! PimYankVisual()
   let linenumber = line("'<")
-  let filename = expand('%:t')
+  let filename = expand('%')
+  if filename[0] is '/'
+    let filename = expand('%:t')
   let vimmode = visualmode()
   try
     let p_save = @p
