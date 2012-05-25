@@ -1,9 +1,9 @@
 " File:         pim.vim
 " Description:  Easy code sharing to Pim
 " Maintainer:   Benjie Gillam <vim@jemjie.com>
-" Version:      0.1.2
+" Version:      0.1.3
 " Language:     Vim script
-" Last Change:  2012 May 22
+" Last Change:  2012 May 25
 
 nnoremap <leader>py :call PimYank()<CR>
 vnoremap <leader>py :call PimYankVisual()<CR>
@@ -35,6 +35,7 @@ function! PimYankVisual()
   let filename = expand('%')
   if filename[0] is '/'
     let filename = expand('%:t')
+  endif
   let vimmode = visualmode()
   try
     let p_save = @p
