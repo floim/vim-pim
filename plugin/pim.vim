@@ -1,7 +1,7 @@
 " File:         pim.vim
 " Description:  Easy code sharing to Pim
 " Maintainer:   Benjie Gillam <vim@jemjie.com>
-" Version:      0.1.3
+" Version:      0.1.4
 " Language:     Vim script
 " Last Change:  2012 May 25
 
@@ -41,7 +41,7 @@ function! PimYankVisual()
     let p_save = @p
     let addNewline = "\n"
     normal! gv"py
-    if vimmode == 'V'
+    if vimmode ==# 'V'
       let addNewline = ""
     endif
     call setreg('p', '```' . filename . ':' . linenumber . "\n" . @p . addNewline . '```')
